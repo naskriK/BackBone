@@ -25,6 +25,119 @@
   src: url("../assets/fonts/figtree-v5-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+:root {
+  --primary-color: hsl(47, 88%, 63%);
+  --neutral-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 50%);
+  --heading-color: hsl(0, 0%, 7%);
+  --dark-color: hsl(0, 0%, 0%);
+
+  --fw-normal: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 800;
+
+  --fs-smallest: 0.74rem;
+  --fs-small: 0.833rem;
+  --fs-default: 1rem;
+  --fs-lg: 1.2rem;
+  --fs-xl: 1.4rem;
+  --fs-2xl: 1.728rem;
+  --fs-3xl: 2.074rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Figree", sans-serif;
+  color: var(--text-color);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--fs-default);
+  min-height: 100dvh;
+  background-color: var(--primary-color);
+}
+
+.card {
+  --width: 21.25rem;
+  --radius: 11px;
+  overflow: hidden;
+  max-width: var(--width);
+  width: 100%;
+  padding: var(--fs-2xl);
+  background-color: var(--neutral-color);
+  border-radius: var(--radius);
+  border: 2px solid var(--dark-color);
+  box-shadow: 0.6rem 0.6rem 0 var(--dark-color);
+}
+
+.card__image-container {
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: var(--fs-small);
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__tag {
+  --px: 5px;
+  --py: calc(var(--px) * 2);
+
+  width: fit-content;
+  padding: var(--px) var(--py);
+  background-color: var(--primary-color);
+  color: var(--heading-color);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-smallest);
+  margin-bottom: var(--fs-small);
+  border-radius: 4px;
+}
+
+.card__published-date {
+  color: var(--dark-color);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-small);
+  margin-bottom: var(--fs-default);
+}
+
+.card__title {
+  font-size: var(--fs-lg);
+  color: var(--dark-color);
+  margin-bottom: var(--fs-default);
+}
+
+.card__description {
+  line-height: 1.5;
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-small);
+  margin-bottom: var(--fs-2xl);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--fs-default);
+}
+
+.author__image {
+  --size: 2rem;
+  width: var(--size);
+  height: var(--size);
+}
+
+.author__name {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--dark-color);
 }
